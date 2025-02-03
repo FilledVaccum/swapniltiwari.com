@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindmaps - Swapnil Tiwari</title>
+    <link rel="stylesheet" href="/src/assets/styles/style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <div class="main-content">
+            <div class="mindmaps-container">
+                <h1>Mindmaps</h1>
+                <p class="mindmaps-intro">
+                    A visual collection of my understanding and knowledge organization on various 
+                    technical topics. These mindmaps are created using draw.io to help break down 
+                    complex concepts into digestible, interconnected pieces.
+                </p>
+
+                <section class="mindmap-category">
+                    <h2>System Design Concepts</h2>
+                    <div class="mindmaps-grid">
+                        <div class="mindmap-card">
+                            <div class="mindmap-image">
+                                <img src="/src/assets/images/mindmaps/distributed-systems.svg" 
+                                     alt="Distributed Systems Concepts"
+                                     loading="lazy">
+                            </div>
+                            <div class="mindmap-content">
+                                <h3>Distributed Systems Concepts</h3>
+                                <p class="mindmap-description">
+                                    Core concepts and patterns in distributed systems including CAP theorem, 
+                                    consistency models, and failure handling.
+                                </p>
+                                <div class="mindmap-tags">
+                                    <span class="tech-tag">Distributed Systems</span>
+                                    <span class="tech-tag">Architecture</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mindmap-card">
+                            <div class="mindmap-image">
+                                <img src="/src/assets/images/mindmaps/microservices.svg" 
+                                     alt="Microservices Architecture"
+                                     loading="lazy">
+                            </div>
+                            <div class="mindmap-content">
+                                <h3>Microservices Architecture</h3>
+                                <p class="mindmap-description">
+                                    Comprehensive overview of microservices patterns, communication styles, 
+                                    and deployment strategies.
+                                </p>
+                                <div class="mindmap-tags">
+                                    <span class="tech-tag">Microservices</span>
+                                    <span class="tech-tag">Design Patterns</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mindmap-category">
+                    <h2>AWS Services</h2>
+                    <div class="mindmaps-grid">
+                        <div class="mindmap-card">
+                            <div class="mindmap-image">
+                                <img src="/src/assets/images/mindmaps/aws-storage.svg" 
+                                     alt="AWS Storage Services"
+                                     loading="lazy">
+                            </div>
+                            <div class="mindmap-content">
+                                <h3>AWS Storage Services</h3>
+                                <p class="mindmap-description">
+                                    Comparison and use cases of different AWS storage options including 
+                                    S3, EBS, EFS, and FSx.
+                                </p>
+                                <div class="mindmap-tags">
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">Storage</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mindmap-card">
+                            <div class="mindmap-image">
+                                <img src="/src/assets/images/mindmaps/aws-compute.svg" 
+                                     alt="AWS Compute Services"
+                                     loading="lazy">
+                            </div>
+                            <div class="mindmap-content">
+                                <h3>AWS Compute Services</h3>
+                                <p class="mindmap-description">
+                                    Deep dive into AWS compute options including EC2, Lambda, 
+                                    ECS, and EKS.
+                                </p>
+                                <div class="mindmap-tags">
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">Compute</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mindmap-category">
+                    <h2>Database Systems</h2>
+                    <div class="mindmaps-grid">
+                        <div class="mindmap-card">
+                            <div class="mindmap-image">
+                                <img src="/src/assets/images/mindmaps/database-types.svg" 
+                                     alt="Database Types and Use Cases"
+                                     loading="lazy">
+                            </div>
+                            <div class="mindmap-content">
+                                <h3>Database Types and Use Cases</h3>
+                                <p class="mindmap-description">
+                                    Comparison of different database types and their ideal use cases 
+                                    in modern applications.
+                                </p>
+                                <div class="mindmap-tags">
+                                    <span class="tech-tag">Databases</span>
+                                    <span class="tech-tag">Architecture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <div id="footer-container"></div>
+
+    <script>
+        // Load components
+        ['header', 'footer'].forEach(component => {
+            fetch(`/src/components/${component}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(`${component}-container`).innerHTML = html;
+                });
+        });
+    </script>
+</body>
+</html> 

@@ -395,4 +395,150 @@ body {
 
 .agents-list .post-link:hover {
     text-decoration: underline;
+}
+
+.mindmaps-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.mindmaps-intro {
+    margin-bottom: 2rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.mindmap-category {
+    margin-bottom: 4rem;
+}
+
+.mindmap-category h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.mindmaps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mindmap-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+}
+
+.mindmap-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.mindmap-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.mindmap-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.mindmap-card:hover .mindmap-image img {
+    transform: scale(1.05);
+}
+
+.mindmap-content {
+    padding: 1.5rem;
+}
+
+.mindmap-content h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.mindmap-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.mindmap-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mindmaps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mindmap-image {
+        height: 180px;
+    }
+} 
+
+/* Header styles */
+.social-links-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-links-header a {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.social-links-header a:hover {
+    opacity: 1;
+}
+
+.social-links-header img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer styles */
+.footer-social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-social-links img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+}
+
+.footer-social-links a:hover img {
+    opacity: 1;
 } 
