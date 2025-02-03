@@ -3,100 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paper Shelf - Swapnil Tiwari</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Papers - Swapnil Tiwari</title>
+    <link rel="stylesheet" href="/src/assets/styles/style.css">
 </head>
 <body>
-    <div id="nav-placeholder"></div>
+    <div id="header-container"></div>
 
-    <main class="papers-container">
-        <h1>Paper Shelf</h1>
-        
-        <div class="papers-intro">
-            <p>
-                I read research papers regularly to stay updated with the latest developments 
-                in distributed systems, databases, and software engineering. Here are my notes 
-                and explanations for the papers I've found most interesting.
-            </p>
-        </div>
+    <main>
+        <div class="main-content">
+            <div class="papers-container">
+                <h1>Papers</h1>
+                <p class="papers-intro">
+                    A collection of research papers I've studied and analyzed, along with my notes 
+                    and insights. These papers cover various aspects of distributed systems, 
+                    databases, and system design.
+                </p>
 
-        <div class="recent-papers">
-            <h2>Recent Paper Notes</h2>
-            <ul class="paper-list">
-                <li>
-                    <span class="paper-date">Mar 15, 2024</span>
-                    <a href="#" class="paper-title">Dynamo: Amazon's Highly Available Key-value Store</a>
-                    <p class="paper-description">
-                        An analysis of Amazon's pioneering distributed database system that 
-                        influenced modern NoSQL databases.
-                    </p>
-                </li>
-                <li>
-                    <span class="paper-date">Mar 01, 2024</span>
-                    <a href="#" class="paper-title">The Google File System</a>
-                    <p class="paper-description">
-                        Deep dive into Google's distributed file system architecture and its 
-                        influence on modern distributed storage.
-                    </p>
-                </li>
-                <li>
-                    <span class="paper-date">Feb 15, 2024</span>
-                    <a href="#" class="paper-title">MapReduce: Simplified Data Processing on Large Clusters</a>
-                    <p class="paper-description">
-                        Understanding the fundamental programming model that revolutionized 
-                        distributed data processing.
-                    </p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="paper-categories">
-            <h2>Paper Categories</h2>
-            
-            <section class="category">
-                <h3>Distributed Systems</h3>
-                <ul class="paper-list">
-                    <li><a href="#">The Chubby Lock Service</a></li>
-                    <li><a href="#">Raft: Consensus Algorithm</a></li>
-                    <li><a href="#">Spanner: Google's Globally-Distributed Database</a></li>
+                <ul class="papers-list">
+                    <li>
+                        <span class="post-date">Feb 07, 2022:</span>
+                        <a href="#" class="post-link">How indexes work on partitioned and sharded data?</a>
+                    </li>
+                    <li>
+                        <span class="post-date">Jan 31, 2022:</span>
+                        <a href="#" class="post-link">Data partitioning strategies for distributed databases</a>
+                    </li>
+                    <li>
+                        <span class="post-date">Jan 24, 2022:</span>
+                        <a href="#" class="post-link">What is Data Partitioning and why it matters at scale</a>
+                    </li>
+                    <li>
+                        <span class="post-date">Jan 16, 2022:</span>
+                        <a href="#" class="post-link">What is leaderless replication and how it works?</a>
+                    </li>
+                    <li>
+                        <span class="post-date">Jan 03, 2022:</span>
+                        <a href="#" class="post-link">How to resolve conflicts in multi-master setup</a>
+                    </li>
+                    <!-- Add more paper reviews as needed -->
                 </ul>
-            </section>
-
-            <section class="category">
-                <h3>Databases</h3>
-                <ul class="paper-list">
-                    <li><a href="#">BigTable: A Distributed Storage System</a></li>
-                    <li><a href="#">Amazon Aurora Design</a></li>
-                    <li><a href="#">Cassandra: A Decentralized Structured Storage System</a></li>
-                </ul>
-            </section>
-
-            <section class="category">
-                <h3>System Design</h3>
-                <ul class="paper-list">
-                    <li><a href="#">Memcached at Facebook</a></li>
-                    <li><a href="#">Kafka: a Distributed Messaging System</a></li>
-                    <li><a href="#">Zanzibar: Google's Authorization System</a></li>
-                </ul>
-            </section>
+            </div>
         </div>
     </main>
-
-    <div id="footer-placeholder"></div>
+    
+    <div id="footer-container"></div>
 
     <script>
-        // Load navigation and footer
-        fetch('nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            });
-
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
+        // Load components
+        ['header', 'footer'].forEach(component => {
+            fetch(`/src/components/${component}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(`${component}-container`).innerHTML = html;
+                });
+        });
     </script>
 </body>
 </html> 

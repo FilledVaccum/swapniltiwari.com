@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agents - Swapnil Tiwari</title>
+    <link rel="stylesheet" href="/src/assets/styles/style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <div class="main-content">
+            <div class="ai-agents-container">
+                <h1>AI Agents</h1>
+                <p class="ai-agents-intro">
+                    Explore my collection of AI Agent implementations using various frameworks and AWS services. 
+                    These demonstrations showcase different approaches to building autonomous AI agents for 
+                    real-world applications.
+                </p>
+
+                <section class="agent-category">
+                    <h2>Phidata Agents</h2>
+                    <ul class="agents-list">
+                        <li>
+                            <span class="post-date">Mar 20, 2024:</span>
+                            <a href="#" class="post-link">AI Development Assistant</a>
+                            <p class="agent-description">
+                                A coding assistant agent built with Phidata that helps with code review, 
+                                refactoring, and best practices suggestions.
+                            </p>
+                            <div class="agent-tech">
+                                <span class="tech-tag">Phidata</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenAI</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="post-date">Mar 15, 2024:</span>
+                            <a href="#" class="post-link">Data Analysis Agent</a>
+                            <p class="agent-description">
+                                Autonomous agent for data analysis and visualization using Phidata's 
+                                workflow capabilities.
+                            </p>
+                            <div class="agent-tech">
+                                <span class="tech-tag">Phidata</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="agent-category">
+                    <h2>Crew.ai Implementations</h2>
+                    <ul class="agents-list">
+                        <li>
+                            <span class="post-date">Mar 18, 2024:</span>
+                            <a href="#" class="post-link">Multi-Agent Task Orchestrator</a>
+                            <p class="agent-description">
+                                A system of collaborative agents using Crew.ai for complex task decomposition 
+                                and execution.
+                            </p>
+                            <div class="agent-tech">
+                                <span class="tech-tag">Crew.ai</span>
+                                <span class="tech-tag">LangChain</span>
+                                <span class="tech-tag">Redis</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="post-date">Mar 12, 2024:</span>
+                            <a href="#" class="post-link">Customer Service Agent Network</a>
+                            <p class="agent-description">
+                                Multiple specialized agents working together to handle customer queries 
+                                and support tickets.
+                            </p>
+                            <div class="agent-tech">
+                                <span class="tech-tag">Crew.ai</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="agent-category">
+                    <h2>AWS Bedrock Agents</h2>
+                    <ul class="agents-list">
+                        <li>
+                            <span class="post-date">Mar 25, 2024:</span>
+                            <a href="#" class="post-link">Enterprise Knowledge Base Assistant</a>
+                            <p class="agent-description">
+                                RAG-powered agent using Bedrock and Knowledge Bases for enterprise 
+                                document search and analysis.
+                            </p>
+                            <div class="agent-tech">
+                                <span class="tech-tag">AWS Bedrock</span>
+                                <span class="tech-tag">Claude</span>
+                                <span class="tech-tag">OpenSearch</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="post-date">Mar 22, 2024:</span>
+                            <a href="#" class="post-link">Serverless AI Agent Pipeline</a>
+                            <p class="agent-description">
+                                End-to-end serverless implementation of AI agents using AWS Bedrock 
+                                and Lambda functions.
+                            </p>
+                            <div class="agent-tech">
+                                <span class="tech-tag">AWS Bedrock</span>
+                                <span class="tech-tag">Lambda</span>
+                                <span class="tech-tag">Step Functions</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <div id="footer-container"></div>
+
+    <script>
+        // Load components
+        ['header', 'footer'].forEach(component => {
+            fetch(`/src/components/${component}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(`${component}-container`).innerHTML = html;
+                });
+        });
+    </script>
+</body>
+</html> 
