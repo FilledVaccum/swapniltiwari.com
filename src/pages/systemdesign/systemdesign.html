@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design - Swapnil Tiwari</title>
+    <link rel="stylesheet" href="/src/assets/styles/style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <div class="main-content">
+            <div class="systemdesign-container">
+                <h1>System Design</h1>
+                <p class="systemdesign-intro">
+                    Deep dives into system design concepts, architectural patterns, and real-world 
+                    case studies. These articles cover everything from fundamental concepts to 
+                    complex distributed system designs.
+                </p>
+
+                <section class="design-category">
+                    <h2>Fundamental Concepts</h2>
+                    <div class="design-grid">
+                        <div class="design-card">
+                            <div class="design-content">
+                                <h3>Distributed Systems Basics</h3>
+                                <p class="design-description">
+                                    Understanding core distributed systems concepts including CAP theorem, 
+                                    consistency models, and fault tolerance.
+                                </p>
+                                <div class="design-meta">
+                                    <span class="post-date">Mar 20, 2024</span>
+                                    <div class="design-tags">
+                                        <span class="tech-tag">Distributed Systems</span>
+                                        <span class="tech-tag">Theory</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design-card">
+                            <div class="design-content">
+                                <h3>Load Balancing Strategies</h3>
+                                <p class="design-description">
+                                    Different load balancing algorithms and their applications in 
+                                    distributed systems.
+                                </p>
+                                <div class="design-meta">
+                                    <span class="post-date">Mar 15, 2024</span>
+                                    <div class="design-tags">
+                                        <span class="tech-tag">Load Balancing</span>
+                                        <span class="tech-tag">Scalability</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="design-category">
+                    <h2>Design Patterns</h2>
+                    <div class="design-grid">
+                        <div class="design-card">
+                            <div class="design-content">
+                                <h3>Event-Driven Architecture</h3>
+                                <p class="design-description">
+                                    Implementing event-driven systems using message queues and 
+                                    event streaming platforms.
+                                </p>
+                                <div class="design-meta">
+                                    <span class="post-date">Mar 10, 2024</span>
+                                    <div class="design-tags">
+                                        <span class="tech-tag">Event-Driven</span>
+                                        <span class="tech-tag">Kafka</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design-card">
+                            <div class="design-content">
+                                <h3>CQRS Pattern</h3>
+                                <p class="design-description">
+                                    Command Query Responsibility Segregation pattern implementation 
+                                    and use cases.
+                                </p>
+                                <div class="design-meta">
+                                    <span class="post-date">Mar 05, 2024</span>
+                                    <div class="design-tags">
+                                        <span class="tech-tag">CQRS</span>
+                                        <span class="tech-tag">Architecture</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="design-category">
+                    <h2>Case Studies</h2>
+                    <div class="design-grid">
+                        <div class="design-card">
+                            <div class="design-content">
+                                <h3>Building a Real-time Analytics System</h3>
+                                <p class="design-description">
+                                    Case study of designing and implementing a scalable real-time 
+                                    analytics pipeline.
+                                </p>
+                                <div class="design-meta">
+                                    <span class="post-date">Feb 28, 2024</span>
+                                    <div class="design-tags">
+                                        <span class="tech-tag">Analytics</span>
+                                        <span class="tech-tag">Real-time</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design-card">
+                            <div class="design-content">
+                                <h3>Designing a URL Shortener</h3>
+                                <p class="design-description">
+                                    Step-by-step guide to designing a scalable URL shortening service.
+                                </p>
+                                <div class="design-meta">
+                                    <span class="post-date">Feb 25, 2024</span>
+                                    <div class="design-tags">
+                                        <span class="tech-tag">System Design</span>
+                                        <span class="tech-tag">Case Study</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <div id="footer-container"></div>
+
+    <script>
+        // Load components
+        ['header', 'footer'].forEach(component => {
+            fetch(`/src/components/${component}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(`${component}-container`).innerHTML = html;
+                });
+        });
+    </script>
+</body>
+</html> 
