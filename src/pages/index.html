@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapnil Tiwari</title>
+    <link rel="stylesheet" href="/src/assets/styles/style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="content-left">
+                <div class="intro">
+                    <h1>Hey, I am Swapnil</h1>
+                    <div class="tagline">curious, tinkerer, and explorer</div>
+                    
+                    <p>I’m a Solutions Architect at AWS specializing in empowering startup customers across India’s North and West regions. My work is all about crafting scalable, innovative cloud solutions that not only solve real business challenges but also drive growth for emerging companies. I’m passionate about being a Builder of robust architectures, a dedicated Learner who constantly upgrades my skills, and an aspiring Presenter eager to share insights and simplify complex technical ideas..</p>
+                    
+                    <p>[Add your professional experience and achievements]</p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-button">
+                            <img src="/src/assets/icons/twitter.svg" alt="Twitter">
+                            Twitter
+                        </a>
+                        <a href="#" class="social-button">
+                            <img src="/src/assets/icons/linkedin.svg" alt="LinkedIn">
+                            LinkedIn
+                        </a>
+                        <a href="#" class="social-button">
+                            <img src="/src/assets/icons/github.svg" alt="GitHub">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Posts Section -->
+                <section class="blog-posts">
+                    <h2>Recent blog posts • <a href="#full-archive">Full archive ➔</a></h2>
+                    <p>Things I have written recently.</p>
+                    <ul class="post-list">
+                        <li>
+                            <span class="post-date">Mar 15, 2024:</span>
+                            <a href="#" class="post-link">Your first blog post</a>
+                        </li>
+                        <li>
+                            <span class="post-date">Mar 10, 2024:</span>
+                            <a href="#" class="post-link">Your second blog post</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Papers Section -->
+                <section class="papers">
+                    <h2>Recent papers • <a href="#papershelf">Papershelf ➔</a></h2>
+                    <p>Papers I have read recently.</p>
+                    <ul class="post-list">
+                        <li>
+                            <span class="post-date">Mar 08, 2024:</span>
+                            <a href="#" class="post-link">First paper review</a>
+                        </li>
+                        <li>
+                            <span class="post-date">Mar 05, 2024:</span>
+                            <a href="#" class="post-link">Second paper review</a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="content-right">
+                <img src="/src/assets/images/profile/Swapnil.jpeg" alt="Swapnil Tiwari" class="profile-image">
+                
+                <!-- Architectures Section -->
+                <section class="architectures">
+                    <h2>Recent architectures • <a href="#all-architectures">All architectures ➔</a></h2>
+                    <p>System design and architecture breakdowns.</p>
+                    <ul class="post-list">
+                        <li>
+                            <span class="post-date">Mar 12, 2024:</span>
+                            <a href="#" class="post-link">Microservices Architecture Patterns</a>
+                        </li>
+                        <li>
+                            <span class="post-date">Mar 08, 2024:</span>
+                            <a href="#" class="post-link">Scalable Data Pipeline Design</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Demos Section -->
+                <section class="demos">
+                    <h2>Recent demos • <a href="#all-demos">All demos ➔</a></h2>
+                    <p>Technical demonstrations and proof of concepts.</p>
+                    <ul class="post-list">
+                        <li>
+                            <span class="post-date">Mar 15, 2024:</span>
+                            <a href="#" class="post-link">Real-time Chat with WebSockets</a>
+                        </li>
+                        <li>
+                            <span class="post-date">Mar 10, 2024:</span>
+                            <a href="#" class="post-link">JWT Authentication in Node.js</a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <div id="footer-container"></div>
+
+    <script>
+        // Load components
+        ['header', 'footer'].forEach(component => {
+            fetch(`/src/components/${component}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(`${component}-container`).innerHTML = html;
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Demos - Swapnil Tiwari</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main class="demos-container">
+        <h1>Interactive Demos</h1>
+        
+        <div class="demos-intro">
+            <p>
+                Explore my collection of interactive Machine Learning and Generative AI demos. 
+                These applications are built using Streamlit and Python, deployed on AWS services. 
+                Feel free to try them out and check their source code on GitHub.
+            </p>
+        </div>
+
+        <div class="demos-grid">
+            <article class="demo-card">
+                <div class="demo-image">
+                    <img src="demo1.png" alt="Text Generation Demo">
+                </div>
+                <div class="demo-content">
+                    <h3>GPT Text Generation</h3>
+                    <div class="demo-tags">
+                        <span class="tag">GenAI</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">AWS Lambda</span>
+                    </div>
+                    <p class="demo-description">
+                        A text generation application using fine-tuned GPT model for specific use cases.
+                    </p>
+                    <div class="demo-links">
+                        <a href="#" class="demo-button live">Try Demo</a>
+                        <a href="#" class="demo-button github">View Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="demo-card">
+                <div class="demo-image">
+                    <img src="demo2.png" alt="Image Classification Demo">
+                </div>
+                <div class="demo-content">
+                    <h3>Image Classification App</h3>
+                    <div class="demo-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">AWS SageMaker</span>
+                    </div>
+                    <p class="demo-description">
+                        Real-time image classification using deep learning models deployed on AWS.
+                    </p>
+                    <div class="demo-links">
+                        <a href="#" class="demo-button live">Try Demo</a>
+                        <a href="#" class="demo-button github">View Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="demo-card">
+                <div class="demo-image">
+                    <img src="demo3.png" alt="Sentiment Analysis Demo">
+                </div>
+                <div class="demo-content">
+                    <h3>Sentiment Analysis Tool</h3>
+                    <div class="demo-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">AWS EC2</span>
+                    </div>
+                    <p class="demo-description">
+                        Analyze sentiment in text using custom-trained models and visualize results.
+                    </p>
+                    <div class="demo-links">
+                        <a href="#" class="demo-button live">Try Demo</a>
+                        <a href="#" class="demo-button github">View Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="demo-card">
+                <div class="demo-image">
+                    <img src="demo4.png" alt="Object Detection Demo">
+                </div>
+                <div class="demo-content">
+                    <h3>Real-time Object Detection</h3>
+                    <div class="demo-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">YOLO</span>
+                        <span class="tag">AWS ECS</span>
+                    </div>
+                    <p class="demo-description">
+                        Detect and track objects in real-time using webcam feed or uploaded videos.
+                    </p>
+                    <div class="demo-links">
+                        <a href="#" class="demo-button live">Try Demo</a>
+                        <a href="#" class="demo-button github">View Code</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load navigation and footer
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 
