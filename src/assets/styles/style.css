@@ -636,3 +636,48 @@ body {
         gap: 0.5rem;
     }
 } 
+
+/* Mindmap modal styles */
+.mindmap-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.mindmap-modal img {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: move;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Make mindmap cards clickable */
+.mindmap-image {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.mindmap-image:hover {
+    opacity: 0.9;
+} 

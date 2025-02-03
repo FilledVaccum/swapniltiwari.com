@@ -128,11 +128,40 @@
                         </div>
                     </div>
                 </section>
+
+                <section class="mindmap-category">
+                    <h2>GenAI</h2>
+                    <div class="mindmaps-grid">
+                        <div class="mindmap-card">
+                            <div class="mindmap-image">
+                                <img src="/src/assets/images/mindmaps/exported/Select _ Generative AI with Large Language Models-Week 1.2 _ Efficient multi-GPU compute strategies.svg" 
+                                     alt="GenAI"
+                                     loading="lazy"
+                                     onclick="expandMindmap(this)">
+                            </div>
+                            <div class="mindmap-content">
+                                <h3>Your Mindmap Title</h3>
+                                <p class="mindmap-description">
+                                    Brief description of what this mindmap covers.
+                                </p>
+                                <div class="mindmap-tags">
+                                    <span class="tech-tag">Tag1</span>
+                                    <span class="tech-tag">Tag2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
     
     <div id="footer-container"></div>
+
+    <div id="mindmap-modal" class="mindmap-modal">
+        <span class="close-modal">&times;</span>
+        <img id="expanded-mindmap" src="" alt="Expanded mindmap">
+    </div>
 
     <script>
         // Load components
@@ -143,6 +172,68 @@
                     document.getElementById(`${component}-container`).innerHTML = html;
                 });
         });
+
+        function expandMindmap(imgElement) {
+            const modal = document.getElementById('mindmap-modal');
+            const expandedImg = document.getElementById('expanded-mindmap');
+            
+            modal.style.display = 'block';
+            expandedImg.src = imgElement.src;
+            expandedImg.alt = imgElement.alt;
+            
+            // Enable zooming and panning
+            let scale = 1;
+            let panning = false;
+            let pointX = 0;
+            let pointY = 0;
+            let start = { x: 0, y: 0 };
+            
+            expandedImg.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                start = { x: e.clientX - pointX, y: e.clientY - pointY };
+                panning = true;
+            });
+            
+            expandedImg.addEventListener('mousemove', (e) => {
+                e.preventDefault();
+                if (!panning) return;
+                pointX = (e.clientX - start.x);
+                pointY = (e.clientY - start.y);
+                expandedImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+            });
+            
+            expandedImg.addEventListener('mouseup', () => {
+                panning = false;
+            });
+            
+            // Zoom with mouse wheel
+            expandedImg.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const xs = (e.clientX - pointX) / scale;
+                const ys = (e.clientY - pointY) / scale;
+                const delta = -e.deltaY;
+                
+                scale += delta * 0.01;
+                scale = Math.min(Math.max(0.1, scale), 4); // Limit scale
+                
+                pointX = e.clientX - xs * scale;
+                pointY = e.clientY - ys * scale;
+                
+                expandedImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+            });
+        }
+
+        // Close modal when clicking the close button or outside the image
+        document.querySelector('.close-modal').onclick = () => {
+            document.getElementById('mindmap-modal').style.display = 'none';
+        };
+
+        window.onclick = (e) => {
+            const modal = document.getElementById('mindmap-modal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
     </script>
 </body>
 </html> 

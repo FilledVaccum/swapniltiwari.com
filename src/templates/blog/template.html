@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Swapnil Tiwari</title>
+    <link rel="stylesheet" href="/src/assets/styles/style.css">
+    <link rel="stylesheet" href="/src/assets/styles/blog.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <div class="blog-post-container">
+            <article class="blog-post">
+                <header class="blog-header">
+                    <h1>{{title}}</h1>
+                    <div class="blog-meta">
+                        <time datetime="{{date}}">{{formatted_date}}</time>
+                        <div class="blog-tags">
+                            {{#tags}}
+                            <span class="tech-tag">{{.}}</span>
+                            {{/tags}}
+                        </div>
+                    </div>
+                </header>
+
+                <div class="blog-content">
+                    {{content}}
+                </div>
+
+                <footer class="blog-footer">
+                    <div class="blog-author">
+                        <img src="/src/assets/images/profile/Swapnil.jpeg" alt="Swapnil Tiwari" class="author-image">
+                        <div class="author-info">
+                            <h3>Written by Swapnil Tiwari</h3>
+                            <p>Solutions Architect at AWS, focusing on distributed systems and cloud architecture.</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+    
+    <div id="footer-container"></div>
+
+    <script>
+        // Load components
+        ['header', 'footer'].forEach(component => {
+            fetch(`/src/components/${component}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(`${component}-container`).innerHTML = html;
+                });
+        });
+    </script>
+</body>
+</html> 
