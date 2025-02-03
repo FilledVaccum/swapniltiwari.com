@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}} - Swapnil Tiwari</title>
+    <title> - Swapnil Tiwari</title>
     <link rel="stylesheet" href="/src/assets/styles/style.css">
     <link rel="stylesheet" href="/src/assets/styles/blog.css">
 </head>
@@ -14,16 +14,13 @@
         <div class="blog-post-container">
             <article class="blog-post">
                 <header class="blog-header">
-                    <h1>{{title}}</h1>
+                    <h1></h1>
                     <div class="blog-meta">
-                        <time datetime="{{date}}">{{formatted_date}}</time>
+                        <time datetime="">Invalid Date</time>
                         <div class="blog-tags">
-                            {{#tags}}
-                            <span class="tech-tag">{{.}}</span>
-                            {{/tags}}
                         </div>
                     </div>
-                    <p class="blog-description">{{description}}</p>
+                    <p class="blog-description"></p>
                 </header>
 
                 <div class="blog-content markdown-body">
@@ -58,7 +55,7 @@
         });
 
         // Safely insert the HTML content
-        document.getElementById('blog-content').innerHTML = `{{{content}}}`;
+        document.getElementById('blog-content').innerHTML = ``;
     </script>
 </body>
 </html> 

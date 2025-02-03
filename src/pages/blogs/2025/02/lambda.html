@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding AWS RDS - Swapnil Tiwari</title>
+    <link rel="stylesheet" href="/src/assets/styles/style.css">
+    <link rel="stylesheet" href="/src/assets/styles/blog.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <div class="blog-post-container">
+            <article class="blog-post">
+                <header class="blog-header">
+                    <h1>Understanding AWS RDS</h1>
+                    <div class="blog-meta">
+                        <time datetime="Mon Feb 03 2025 05:30:00 GMT+0530 (India Standard Time)">February 3, 2025</time>
+                        <div class="blog-tags">
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Database</span>
+                            <span class="tech-tag">RDS</span>
+                        </div>
+                    </div>
+                    <p class="blog-description">A comprehensive guide to Amazon Relational Database Service</p>
+                </header>
+
+                <div class="blog-content markdown-body">
+                    <!-- Direct content injection -->
+                    <div class="markdown-content" id="blog-content">
+                    </div>
+                </div>
+
+                <footer class="blog-footer">
+                    <div class="blog-author">
+                        <img src="/src/assets/images/profile/Swapnil.jpeg" alt="Swapnil Tiwari" class="author-image">
+                        <div class="author-info">
+                            <h3>Written by Swapnil Tiwari</h3>
+                            <p>Solutions Architect at AWS, focusing on distributed systems and cloud architecture.</p>
+                        </div>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+    
+    <div id="footer-container"></div>
+
+    <script>
+        // Load components
+        ['header', 'footer'].forEach(component => {
+            fetch(`/src/components/${component}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(`${component}-container`).innerHTML = html;
+                });
+        });
+
+        // Safely insert the HTML content
+        document.getElementById('blog-content').innerHTML = `<h1 id="managing-your-databases-with-amazon-rds">Managing Your Databases with Amazon RDS</h1>
+<p>Amazon RDS (Relational Database Service) simplifies the setup, operation, and scaling of a relational database in the cloud. It supports several database engines, making it a versatile choice for many applications.</p>
+<h2 id="what-is-amazon-rds">What is Amazon RDS?</h2>
+<p>Amazon RDS helps you to:</p>
+<ul>
+<li><strong>Automate Management:</strong> Handles routine tasks like backups and patching.</li>
+<li><strong>Scale Easily:</strong> Adjust compute resources and storage with minimal downtime.</li>
+<li><strong>Ensure High Availability:</strong> Supports Multi-AZ deployments for failover.</li>
+<li><strong>Improve Security:</strong> Provides encryption at rest and in transit.</li>
+</ul>
+<h3 id="mnemonic-reminder-smart--scalable-managed-automated-reliable-trusted">Mnemonic Reminder: <strong>SMART</strong> – <em>Scalable, Managed, Automated, Reliable, Trusted</em></h3>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Multiple Database Engines:</strong> Supports MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB.</li>
+<li><strong>Automated Backups &amp; Snapshots:</strong> Simplifies disaster recovery.</li>
+<li><strong>Performance Monitoring:</strong> Integrated with Amazon CloudWatch.</li>
+<li><strong>Security &amp; Compliance:</strong> Managed with VPC, IAM, and encryption features.</li>
+</ul>
+<h2 id="thought-provoking-questions">Thought-Provoking Questions</h2>
+<ol>
+<li><p><strong>How does Multi-AZ deployment enhance the availability and durability of your database?</strong><br><em>Examine the benefits of synchronous data replication.</em></p>
+</li>
+<li><p><strong>What strategies can be used to optimize performance and cost in an RDS environment?</strong><br><em>Consider scaling options and storage optimization techniques.</em></p>
+</li>
+<li><p><strong>How can RDS’s automated features reduce administrative overhead for your team?</strong><br><em>Discuss the impact of automation on database maintenance and reliability.</em></p>
+</li>
+</ol>
+<hr>
+<p><em>End of Amazon RDS blog post</em></p>
+`;
+    </script>
+</body>
+</html> 
